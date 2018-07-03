@@ -1,0 +1,77 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <b>Premium Streamer</b>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">Already a member?</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+<div id="headerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>You want Premium .. Sign up and get it.</h1>
+          <div *ngIf="!download; else downloadLink">
+            <form class="form-inline" role="form">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input class="form-control" id="control-firstname" placeholder="First name" name="firstname" [(ngModel)]="firstname">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input class="form-control" id="control-lastname" placeholder="Last name" name="lastname" [(ngModel)]="lastname" />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="control-email" placeholder="Email" name="email" [(ngModel)]="email">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="password" class="form-control" id="control-password" placeholder="Password" name="password" [(ngModel)]="password">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="password" class="form-control" id="control-password-repeat" placeholder="Confim password" name="resetPassword" [(ngModel)]="resetPassword">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input class="form-control" id="control-emui" placeholder="EMUI" name="emui" [(ngModel)]="emui">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" (click)="onFormSubmit()" *ngIf="!saving" class="btn btn-warning btn-lg">Sign up</button>
+                <button type="submit" class="btn btn-warning btn-lg" *ngIf="saving">Signing in progress..</button>
+              </div>
+            </form>	
+          </div>
+        </div><!-- /col-lg-6 -->
+        <ng-template #downloadLink>
+          <p>Download your app from here <i class="fas fa-download"></i></p>
+      </ng-template>
+        <div class="col-lg-6">
+          <img class="img-responsive" src="assets/img/ipad-hand (2).png" alt="">
+        </div><!-- /col-lg-6 -->
+        
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /headerwrap -->
